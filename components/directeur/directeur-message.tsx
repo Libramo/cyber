@@ -30,7 +30,7 @@ export default function DirecteurMessage() {
             <span className="absolute -bottom-3 -left-3 w-6 h-6 border-b-2 border-l-2 border-sky-500/50" />
             <span className="absolute -bottom-3 -right-3 w-6 h-6 border-b-2 border-r-2 border-sky-500/50" />
 
-            <div className="aspect-[3/4] bg-slate-800 border border-slate-700 flex flex-col items-center justify-center gap-3">
+            <div className="aspect-3/4 bg-slate-800 border border-slate-700 flex flex-col items-center justify-center gap-3">
               {/* <div className="w-20 h-20 rounded-full bg-slate-700 border border-slate-600" />
               <div className="w-24 h-2 bg-slate-700 rounded" />
               <div className="w-16 h-2 bg-slate-700/60 rounded" /> */}

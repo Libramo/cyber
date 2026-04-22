@@ -13,8 +13,8 @@ import {
 const missions = [
   {
     icon: ShieldCheck,
-    label: "Prévention",
-    desc: "Auditer les systèmes d'information critiques, publier des guides de sécurité et renforcer la posture défensive des organisations nationales.",
+    label: "Gouvernance & Stratégie",
+    desc: "Définition de la politique nationale de sécurité des systèmes d'information et coordination interministérielle. Pilotage stratégique de l'ensemble des actions de cybersécurité au niveau national.",
     color: "text-emerald-400",
     border: "border-emerald-500/20",
     bg: "bg-emerald-500/5",
@@ -22,8 +22,8 @@ const missions = [
   },
   {
     icon: ScanSearch,
-    label: "Détection",
-    desc: "Surveiller en continu le cyberespace et identifier les vulnérabilités avant exploitation.",
+    label: "Coopération Internationale",
+    desc: "Représentation de Djibouti dans les instances internationales et partenariats bilatéraux pour renforcer la cybersécurité régionale.",
     color: "text-sky-400",
     border: "border-sky-500/20",
     bg: "bg-sky-500/5",
@@ -31,8 +31,8 @@ const missions = [
   },
   {
     icon: Siren,
-    label: "Réponse aux incidents",
-    desc: "Coordonner la réponse aux cyberattaques et assurer le retour à la normale.",
+    label: "Protection des OIV",
+    desc: "Accompagnement et contrôle de la sécurité des Opérateurs d'Importance Vitale.",
     color: "text-red-400",
     border: "border-red-500/20",
     bg: "bg-red-500/5",
@@ -40,8 +40,8 @@ const missions = [
   },
   {
     icon: BookOpen,
-    label: "Sensibilisation",
-    desc: "Former les acteurs publics et privés aux bonnes pratiques de la cybersécurité.",
+    label: "Audit & Qualification",
+    desc: "Labellisation des produits et qualification des prestataires de confiance.",
     color: "text-amber-400",
     border: "border-amber-500/20",
     bg: "bg-amber-500/5",
@@ -49,8 +49,8 @@ const missions = [
   },
   {
     icon: Scale,
-    label: "Réglementation",
-    desc: "Définir le cadre juridique, veiller à la conformité et délivrer les certifications.",
+    label: "Culture Cyber",
+    desc: "Programmes de sensibilisation et développement des filières de formation.",
     color: "text-violet-400",
     border: "border-violet-500/20",
     bg: "bg-violet-500/5",
@@ -58,8 +58,8 @@ const missions = [
   },
   {
     icon: Globe,
-    label: "Coopération internationale",
-    desc: "Nouer des partenariats stratégiques et partager le renseignement cyber avec les agences homologues.",
+    label: "Cyberdéfense Active",
+    desc: "Détection des intrusions et pilotage des crises cybernétiques majeures.",
     color: "text-cyan-400",
     border: "border-cyan-500/20",
     bg: "bg-cyan-500/5",
@@ -82,14 +82,15 @@ export default function Missions() {
           className="text-xs tracking-widest uppercase text-sky-500 mb-3"
           style={{ fontFamily: "var(--font-ibm)" }}
         >
-          Nos missions
+          Missions stratégiques
         </p>
         <h2
           className="text-3xl sm:text-4xl font-bold text-white"
           style={{ fontFamily: "var(--font-syne)" }}
         >
-          Six piliers de la{" "}
-          <span className="text-sky-400">sécurité nationale</span>
+          Une approche globale pour{" "}
+          <span className="text-sky-400">sécuriser</span> les actifs vitaux de
+          la <span className="text-sky-400">nation</span>
         </h2>
       </motion.div>
 
@@ -128,7 +129,7 @@ export default function Missions() {
                 className="text-xs text-slate-600 tracking-widest uppercase"
                 style={{ fontFamily: "var(--font-ibm)" }}
               >
-                Mission 01
+                Mission principale
               </span>
             </div>
             <h3
