@@ -1,65 +1,62 @@
-import Image from "next/image";
+import CtaBand from "@/components/home/cta-band";
+import Director from "@/components/home/director";
+import HeroCtas from "@/components/home/hero-ctas";
+import HeroHeading from "@/components/home/hero-heading";
+import HeroStats from "@/components/home/hero-stats";
+import HeroSub from "@/components/home/hero-sub";
+import HeroTag from "@/components/home/hero-tag";
+import Missions from "@/components/home/missions";
+import Partners from "@/components/home/partners";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main>
+      <section className="relative overflow-hidden bg-slate-900 min-h-screen flex items-center">
+        {/* Binary background */}
+        <div
+          className="absolute inset-0 opacity-[0.035] select-none pointer-events-none overflow-hidden"
+          style={{ fontFamily: "var(--font-ibm-mono)" }}
+          aria-hidden
+        >
+          {Array.from({ length: 20 }).map((_, col) => (
+            <div
+              key={col}
+              className="absolute top-0 bottom-0 flex flex-col gap-3 text-sky-400 text-xs leading-relaxed"
+              style={{ left: `${col * 5.2}%` }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              {"10110100111001011010110100101011010011100101101011010010101101001110010110101101001010110100111001011010"
+                .split("")
+                .map((char, i) => (
+                  <span
+                    key={i}
+                    style={{ opacity: Math.random() > 0.5 ? 0.8 : 0.3 }}
+                  >
+                    {char}
+                  </span>
+                ))}
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-225 h-125 bg-sky-600/15 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-100 h-100 bg-emerald-600/5 blur-[100px] rounded-full pointer-events-none" />
+
+        <div className="relative w-full px-6 sm:px-12 lg:px-24 xl:px-36 py-24 sm:py-28 lg:py-36">
+          <div className="w-full max-w-2xl sm:max-w-3xl lg:max-w-4xl">
+            <HeroTag />
+            <HeroHeading />
+            <HeroSub />
+            <HeroCtas />
+          </div>
+          <HeroStats />
         </div>
-      </main>
-    </div>
+      </section>
+
+      <Missions />
+      <Partners />
+      <Director />
+      <CtaBand />
+    </main>
   );
 }
