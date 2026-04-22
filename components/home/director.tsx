@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Quote, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { nameDG } from "../directeur/directeur-message";
 
 export default function Director() {
   return (
@@ -46,7 +47,7 @@ export default function Director() {
                   className="text-sm font-semibold text-white"
                   style={{ fontFamily: "var(--font-syne)" }}
                 >
-                  Nom Prénom
+                  {nameDG}
                 </p>
                 <p
                   className="text-xs text-sky-400 mt-0.5"
