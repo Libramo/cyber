@@ -12,7 +12,7 @@ export default function HeroCtas() {
       className="flex flex-wrap items-center gap-4"
     >
       <Link
-        href="/signalement"
+        href="/"
         className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 transition-colors px-6 py-3 text-xs font-semibold tracking-widest uppercase text-white"
       >
         <AlertTriangle className="h-3.5 w-3.5" />

@@ -4,8 +4,8 @@ import { motion } from "motion/react";
 import { Quote, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { nameDG } from "../directeur/directeur-message";
 
+const nameDG = "Ibrahim Yonis Omar";
 export default function Director() {
   return (
     <section className="bg-slate-950 py-24 px-6 sm:px-12 lg:px-24 xl:px-36 border-t border-slate-800">
