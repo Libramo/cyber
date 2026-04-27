@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ShieldAlert, MapPin, Phone, Mail } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Accueil", desc: "Page principale de l'agence" },
@@ -27,26 +28,31 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 border-t border-slate-800 text-slate-300">
       <div className="px-6 sm:px-12 lg:px-24 xl:px-32 py-16">
-        <div className="grid gap-12 md:grid-cols-3">
+        <div className="grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {/* Brand */}
           <div className="flex flex-col gap-5">
             <Link href="/" className="flex items-center gap-2.5 w-fit">
-              <ShieldAlert className="h-5 w-5 text-sky-400" />
+              <Image
+                src="/images/logo.png"
+                alt="logo anc"
+                width={70}
+                height={30}
+                className="h-16 w-auto object-contain shrink-0"
+              />
               <span
-                className="text-sm font-bold tracking-widest uppercase text-white"
+                className="text-xs font-bold tracking-widest uppercase text-white"
                 style={{ fontFamily: "var(--font-syne)" }}
               >
-                Cyber<span className="text-sky-400">Agency</span>
+                Agence Nationale de Cybersécurité
               </span>
             </Link>
 
             <p
-              className="text-sm leading-relaxed text-slate-500"
+              className="text-xs leading-relaxed text-slate-500"
               style={{ fontFamily: "var(--font-ibm)" }}
             >
-              L'agence nationale de cybersécurité œuvre à la protection des
-              infrastructures numériques critiques et à la résilience du
-              cyberespace national.
+              Garant de la souveraineté numérique nationale. Protection des
+              infrastructures critiques et sensibilisation à la cybersécurité.
             </p>
 
             <div className="flex items-center gap-1 pt-1">
@@ -109,9 +115,9 @@ export default function Footer() {
                   className="text-sm text-slate-500 leading-relaxed"
                   style={{ fontFamily: "var(--font-ibm)" }}
                 >
-                  Avenue de la République, BP 1234
+                  Présidence de la République, BP 1234
                   <br />
-                  Djibouti, République de Djibouti
+                  République de Djibouti
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -127,11 +133,11 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 shrink-0 text-sky-500" />
                 <a
-                  href="mailto:contact@cyberagency.dj"
+                  href="mailto:contact@anc.dj"
                   className="text-sm text-slate-500 hover:text-white transition-colors"
                   style={{ fontFamily: "var(--font-ibm)" }}
                 >
-                  contact@cyberagency.dj
+                  contact@anc.dj
                 </a>
               </li>
             </ul>
@@ -158,15 +164,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-slate-800 pt-6 sm:flex-row">
+        <div className="mt-14 flex flex-col gap-4 border-t border-slate-800 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p
-            className="text-xs text-slate-700"
+            className="text-xs text-slate-700 text-center sm:text-left"
             style={{ fontFamily: "var(--font-ibm)" }}
           >
             © {new Date().getFullYear()} CyberAgency. Tous droits réservés.
           </p>
           <div
-            className="flex gap-6 text-xs text-slate-700"
+            className="flex flex-wrap justify-center sm:justify-end gap-4 text-xs text-slate-700"
             style={{ fontFamily: "var(--font-ibm)" }}
           >
             <Link

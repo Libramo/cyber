@@ -11,18 +11,18 @@ export default function HeroCtas() {
       transition={{ duration: 0.5, delay: 0.3 }}
       className="flex flex-wrap items-center gap-4"
     >
-      <Link
+      {/* <Link
         href="/"
         className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 transition-colors px-6 py-3 text-xs font-semibold tracking-widest uppercase text-white"
       >
         <AlertTriangle className="h-3.5 w-3.5" />
         Signaler un incident
-      </Link>
+      </Link> */}
       <Link
-        href="/actualites"
+        href="#missions"
         className="inline-flex items-center gap-2 border border-slate-600 hover:border-sky-500 text-slate-300 hover:text-sky-400 transition-colors px-6 py-3 text-xs font-semibold tracking-widest uppercase"
       >
-        Dernières alertes
+        Nos missions
         <ArrowRight className="h-3.5 w-3.5" />
       </Link>
     </motion.div>

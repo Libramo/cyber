@@ -1,56 +1,55 @@
 "use client";
 
 import { motion } from "motion/react";
-import Image from "next/image";
 
 const members = [
-  { id: 1, name: "Nom Prénom", title: "Président du Conseil", president: true },
   {
-    id: 2,
-    name: "Nom Prénom",
-    title: "Représentant — Ministère du Numérique",
+    name: "M. Hassan Said Khaireh",
+    title: "Directeur Général de la Sécurité Nationale",
+    president: true,
+    secretaire: false,
+  },
+  {
+    name: "M. Ibrahim Yonis Omar",
+    title: "Directeur Général de l'ANC",
+    president: false,
+    secretaire: true,
+  },
+  {
+    name: "Membre",
+    title: "Ministre de l'Intérieur",
     president: false,
   },
   {
-    id: 3,
-    name: "Nom Prénom",
-    title: "Représentant — Ministère de l'Intérieur",
+    name: "",
+    title:
+      "Ministre de la Justice et des Affaires Pénitentiaires Chargé des Droits de l'Homme",
     president: false,
   },
   {
-    id: 4,
-    name: "Nom Prénom",
-    title: "Représentant — Ministère de la Justice",
+    name: "Ministre de la Défense Chargé des relations avec le Parlement",
+    title: "Membre",
     president: false,
   },
   {
-    id: 5,
-    name: "Nom Prénom",
-    title: "Représentant — Ministère de la Défense",
+    name: "Ministre de l'Économie et des Finances Chargé de l'industrie",
+    title: "Membre",
     president: false,
   },
   {
-    id: 6,
-    name: "Nom Prénom",
-    title: "Expert indépendant — Cybersécurité",
+    name: "Ministre Déléguée chargée de l'Économie Numérique et de l'Innovation",
+    title: "Membre",
+    president: false,
+  },
+
+  {
+    name: "Directeur Général de l'Autorité de Régulation Multisectorielle",
+    title: "Membre",
     president: false,
   },
   {
-    id: 7,
-    name: "Nom Prénom",
-    title: "Expert indépendant — Droit du numérique",
-    president: false,
-  },
-  {
-    id: 8,
-    name: "Nom Prénom",
-    title: "Représentant — Secteur privé",
-    president: false,
-  },
-  {
-    id: 9,
-    name: "Nom Prénom",
-    title: "Représentant — Société civile",
+    name: "Président de la Commission Nationale de Protection des Données",
+    title: "Membre",
     president: false,
   },
 ];
@@ -82,7 +81,7 @@ export default function ConseilMembers() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-800/40">
         {members.map((member, i) => (
           <motion.div
-            key={member.id}
+            key={i}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -99,6 +98,23 @@ export default function ConseilMembers() {
                   style={{ fontFamily: "var(--font-ibm)" }}
                 >
                   Président
+                </span>
+              </div>
+            )}
+
+            {/* Événement: {
+    text: "",
+    border: "",
+    bg: "",
+  }, */}
+            {/* President badge */}
+            {member.secretaire && (
+              <div className="absolute top-4 right-4">
+                <span
+                  className="text-xs font-semibold tracking-widest uppercase px-2.5 py-1 border border-amber-500/30 bg-amber-500/10 text-amber-400"
+                  style={{ fontFamily: "var(--font-ibm)" }}
+                >
+                  Secrétaire du conseil
                 </span>
               </div>
             )}
@@ -131,13 +147,13 @@ export default function ConseilMembers() {
                 }`}
                 style={{ fontFamily: "var(--font-syne)" }}
               >
-                {member.name}
+                {member.title}
               </h3>
               <p
                 className="text-xs text-slate-500 leading-relaxed"
                 style={{ fontFamily: "var(--font-ibm)" }}
               >
-                {member.title}
+                {member.name}
               </p>
             </div>
 

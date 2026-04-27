@@ -6,6 +6,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ShieldAlert, Menu, X, ChevronDown, AlertTriangle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const links = [
   { href: "/", label: "Accueil" },
@@ -37,20 +38,31 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-slate-900 border-b border-slate-800">
-      <div className="flex h-14 w-full items-center justify-between px-6 sm:px-12 lg:px-24 xl:px-32">
+      <div className="flex  w-full items-center justify-between px-6 sm:px-12 lg:px-24 xl:px-32">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 shrink-0">
-          <ShieldAlert className="h-5 w-5 text-sky-400" />
+        <Link href="/" className="flex items-center gap-2.5 w-fit">
+          <Image
+            src={"/images/presidence.png"}
+            alt="logo anc"
+            width={80}
+            height={30}
+          />
+          <Image
+            src={"/images/logo.png"}
+            alt="logo anc"
+            width={60}
+            height={30}
+          />
           <span
+            className="text-2xl font-bold tracking-widest uppercase text-white"
             style={{ fontFamily: "var(--font-syne)" }}
-            className="text-sm font-bold tracking-widest uppercase text-white"
           >
-            Cyber<span className="text-sky-400">Agency</span>
+            ANC
           </span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center">
+        <nav className="hidden nav:flex items-center">
           {links.map((link) => {
             if ("children" in link) {
               return (
@@ -135,7 +147,7 @@ export default function Navbar() {
         </nav>
 
         {/* CTA */}
-        <div className="hidden md:flex items-center">
+        <div className="hidden nav:flex items-center">
           <a
             href="https://cert.gouv.dj/"
             target="_blank"
@@ -149,7 +161,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-slate-400 hover:text-white"
+          className="nav:hidden text-slate-400 hover:text-white"
           onClick={() => setMobileOpen((v) => !v)}
         >
           {mobileOpen ? (
@@ -167,7 +179,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden bg-slate-900 border-t border-slate-800 md:hidden"
+            className="overflow-hidden bg-slate-900 border-t border-slate-800 nav:hidden"
           >
             <nav className="flex flex-col">
               {links.map((link) => {

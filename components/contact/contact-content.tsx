@@ -8,13 +8,13 @@ const infos = [
   {
     icon: MapPin,
     label: "Adresse",
-    value: "Avenue de la République, BP 1234\nDjibouti, République de Djibouti",
+    value: "Présidence de la République Djibouti",
   },
   {
     icon: Phone,
     label: "Téléphone",
-    value: "+253 21 00 00 00",
-    href: "tel:+25321000000",
+    value: "+253 21 44 44 44",
+    href: "tel:+25321444444",
   },
   {
     icon: Mail,

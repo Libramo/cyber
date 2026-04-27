@@ -69,7 +69,10 @@ const missions = [
 
 export default function Missions() {
   return (
-    <section className="bg-slate-950 py-24 px-6 sm:px-12 lg:px-24 xl:px-36">
+    <section
+      id="missions"
+      className="bg-slate-950 py-24 px-6 sm:px-12 lg:px-24 xl:px-36"
+    >
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}

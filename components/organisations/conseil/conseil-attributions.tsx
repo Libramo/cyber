@@ -151,24 +151,26 @@ export default function ConseilAttributions() {
       </motion.div>
 
       {/* Tabs */}
-      <div className="flex gap-px mb-10 bg-slate-800/40 w-fit">
-        {categories.map(
-          ({ id, icon: Icon, type, color, border, bg, activeBorder }) => (
-            <button
-              key={id}
-              onClick={() => setActive(id)}
-              className={`flex items-center gap-2.5 px-6 py-3.5 text-xs font-semibold tracking-widest uppercase transition-all duration-200 border-b-2 ${
-                active === id
-                  ? `bg-slate-900 ${color} ${activeBorder}`
-                  : "bg-slate-950 text-slate-500 border-transparent hover:text-slate-300 hover:bg-slate-900"
-              }`}
-              style={{ fontFamily: "var(--font-ibm)" }}
-            >
-              <Icon className="h-3.5 w-3.5" />
-              {type}
-            </button>
-          ),
-        )}
+      <div className="flex justify-center">
+        <div className="flex gap-px mb-10 bg-slate-800/40 w-fit">
+          {categories.map(
+            ({ id, icon: Icon, type, color, border, bg, activeBorder }) => (
+              <button
+                key={id}
+                onClick={() => setActive(id)}
+                className={`flex items-center gap-2.5 px-6 py-3.5 text-xs font-semibold tracking-widest uppercase transition-all duration-200 border-b-2 ${
+                  active === id
+                    ? `bg-slate-900 ${color} ${activeBorder}`
+                    : "bg-slate-950 text-slate-500 border-transparent hover:text-slate-300 hover:bg-slate-900"
+                }`}
+                style={{ fontFamily: "var(--font-ibm)" }}
+              >
+                <Icon className="h-3.5 w-3.5" />
+                {type}
+              </button>
+            ),
+          )}
+        </div>
       </div>
 
       {/* Cards */}

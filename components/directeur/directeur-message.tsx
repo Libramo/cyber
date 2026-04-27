@@ -122,9 +122,9 @@ export default function DirecteurMessage() {
 
           {/* Signature */}
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-slate-800 border border-slate-700 flex items-center justify-center">
+            {/* <div className="w-12 h-12 bg-slate-800 border border-slate-700 flex items-center justify-center">
               <div className="w-6 h-6 rounded-full bg-slate-700" />
-            </div>
+            </div> */}
             <div>
               <p
                 className="text-sm font-bold text-white"
@@ -136,7 +136,7 @@ export default function DirecteurMessage() {
                 className="text-xs text-sky-400"
                 style={{ fontFamily: "var(--font-ibm)" }}
               >
-                Directeur Général — CyberAgency
+                Directeur Général — ANC
               </p>
             </div>
           </div>

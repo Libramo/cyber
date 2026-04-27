@@ -1,19 +1,24 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 
 const partners = [
-  { abbr: "ARTT", name: "Autorité de Régulation des Télécommunications" },
-  { abbr: "MIN-INT", name: "Ministère de l'Intérieur" },
-  { abbr: "MIN-NUM", name: "Ministère du Numérique" },
   {
-    abbr: "INTERPOL",
-    name: "Organisation Internationale de Police Criminelle",
+    abbr: "ARTT",
+    name: "Ministère Délégué à l'Economie Numérique et à l'Innovation",
+    logo: "/images/meni.jpeg",
   },
-  { abbr: "ITU", name: "Union Internationale des Télécommunications" },
-  { abbr: "AFRIPOL", name: "Mécanisme Africain de Police" },
-  { abbr: "AN-DSI", name: "Agence Nationale des Systèmes d'Information" },
-  { abbr: "DJICEL", name: "Djibouti Télécom" },
+  {
+    abbr: "ANSIE",
+    name: "Agence Nationale des Systèmes d'Informations de l'Etat (ANSIE)",
+    logo: "/images/ansie.png",
+  },
+  {
+    abbr: "UD",
+    name: "Université de Djibouti",
+    logo: "/images/universite_djibouti.png",
+  },
 ];
 
 export default function Partners() {
@@ -47,13 +52,12 @@ export default function Partners() {
           className="text-sm text-slate-500 max-w-sm leading-relaxed"
           style={{ fontFamily: "var(--font-ibm)" }}
         >
-          L'agence opère en étroite collaboration avec les institutions
-          nationales et les organisations internationales spécialisées.
+          Coopération nationale pour la cybersécurité et l'innovation numérique.
         </p>
       </motion.div>
 
       {/* Partners grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-slate-800/50">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-px bg-slate-800/50">
         {partners.map((p, i) => (
           <motion.div
             key={p.abbr}
@@ -71,12 +75,14 @@ export default function Partners() {
               <span className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-slate-700 group-hover:border-sky-500/50 transition-colors duration-300" />
               <span className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-slate-700 group-hover:border-sky-500/50 transition-colors duration-300" />
 
-              <span
+              {/* <span
                 className="text-lg font-bold text-slate-500 group-hover:text-sky-400 transition-colors duration-300 tracking-widest px-4 py-3"
                 style={{ fontFamily: "var(--font-syne)" }}
               >
                 {p.abbr}
-              </span>
+              </span> */}
+
+              <Image src={p.logo} alt={p.abbr} width={100} height={100} />
             </div>
 
             {/* Name */}
